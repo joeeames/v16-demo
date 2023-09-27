@@ -11,7 +11,7 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./hero-detail.component.css'],
 })
 export class HeroDetailComponent implements OnInit {
-  hero: Hero | undefined;
+  hero!: Hero;
 
   constructor(
     private route: ActivatedRoute,
@@ -41,8 +41,7 @@ export class HeroDetailComponent implements OnInit {
 
   save(): void {
     someThirdPartyPromise().then(() => {
-      if (this.hero)
-        this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
+      this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
     });
   }
 }

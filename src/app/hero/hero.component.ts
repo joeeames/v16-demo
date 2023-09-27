@@ -7,7 +7,7 @@ import { Hero } from '../hero';
   styleUrls: ['./hero.component.css'],
 })
 export class HeroComponent {
-  @Input() hero: Hero | undefined;
+  @Input() hero!: Hero;
   @Output() delete = new EventEmitter();
 
   onDeleteClick($event: any): void {

@@ -13,7 +13,7 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./hero-search.component.css'],
 })
 export class HeroSearchComponent implements OnInit {
-  heroes$: Observable<Hero[]> | undefined;
+  heroes$!: Observable<Hero[]>;
   private searchTerms = new Subject<string>();
 
   constructor(private heroService: HeroService) {}
